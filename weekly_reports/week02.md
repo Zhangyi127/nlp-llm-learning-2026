@@ -9,13 +9,12 @@
 4. collections.Counter，快速做计数统计，底层是字典。
 5. 文本归一化：原始文本包含多余空格、大小写，需要预处理再统计。
 
-## 踩坑记录（验收要求：至少1个路径/编码相关问题）
+## 踩坑记录
 1. **路径踩坑**：notebooks文件夹内运行代码，如果直接写`data/week02_sentences.txt`会报找不到文件。
 因为notebook当前工作目录是`notebooks/`，需要往上一级，写成`../data/xxx.txt`相对路径。
 >解决：使用pathlib.Path管理路径，`../`代表向上一层目录。
 2. 文件读取忘记指定`encoding="utf‑8"`，读取中文文本出现乱码报错。
 >解决：open打开文件强制指定encoding="utf‑8"。
-3. 处理文本没有strip()，换行符、首尾空格混入统计，词频统计结果异常。
 
 ## 实践任务完成情况
 1. 数据集：完成`data/week02_sentences.txt`，共30条中文短句。
